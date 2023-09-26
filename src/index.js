@@ -1,12 +1,5 @@
-import './style.css'
+import './style.css';
 
-import load from './pageLoad'
+import load from './pageLoad';
 
-
-load()
-
-
-
-
-
-
+load();

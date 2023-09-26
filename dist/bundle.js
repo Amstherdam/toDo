@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/constractItem.js":
+/*!******************************!*\
+  !*** ./src/constractItem.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modalAdddBtn = document.querySelector('#modalAdddBtn');\r\nconst modalNewTitle = document.querySelector('#modalNewTitle');\r\n\r\nlet todoArr = [];\r\nconst taskComponent = function () {\r\n  modalAdddBtn.addEventListener('click', createNewTask);\r\n};\r\n\r\nconst createNewTask = function (event) {\r\n  event.preventDefault();\r\n\r\n  const title = document.querySelector('#modalNewTitle');\r\n  const description = document.querySelector('#modalNewDescription');\r\n  const dueDate = document.querySelector('#modalNewDate');\r\n  const priority = document.querySelector('#modalNewPriority');\r\n  const project = document.querySelector('#modalNewProject');\r\n\r\n  let object = {\r\n    title: title.value,\r\n    description: description.value,\r\n    dueDate: dueDate.value,\r\n    priority: priority.value,\r\n    project: project.value,\r\n  };\r\n\r\n  todoArr.push(object);\r\n  console.log(todoArr);\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskComponent);\r\n\n\n//# sourceURL=webpack://anydo/./src/constractItem.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _pageLoad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pageLoad */ \"./src/pageLoad.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_pageLoad__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://anydo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _pageLoad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pageLoad */ \"./src/pageLoad.js\");\n\r\n\r\n\r\n\r\n(0,_pageLoad__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\n\n//# sourceURL=webpack://anydo/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modalContainer = document.querySelector('#modalDataInput')\r\nconst addNewFormBtn = document.querySelector('#addNewFormBtn')\r\nconst modalCloseBtn = document.querySelector('#modalClose')\r\n\r\n\r\nconst modalToggle = function () { \r\n    \r\n    addNewFormBtn.addEventListener('click' , () => { \r\n        modalContainer.classList.add('modalDataInputOpen')\r\n    });\r\n\r\n    modalCloseBtn.addEventListener('click', () => { \r\n        modalContainer.classList.remove('modalDataInputOpen')\r\n    });\r\n}\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalToggle);\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://anydo/./src/modal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modalContainer = document.querySelector('#modalDataInput');\r\nconst addNewFormBtn = document.querySelector('#addNewFormBtn');\r\nconst modalCloseBtn = document.querySelector('#modalClose');\r\n\r\nconst modalToggle = function () {\r\n  addNewFormBtn.addEventListener('click', () => {\r\n    modalContainer.classList.add('modalDataInputOpen');\r\n  });\r\n\r\n  modalCloseBtn.addEventListener('click', () => {\r\n    modalContainer.classList.remove('modalDataInputOpen');\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalToggle);\r\n\n\n//# sourceURL=webpack://anydo/./src/modal.js?");
 
 /***/ }),
 
@@ -136,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ \"./src/modal.js\");\n/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ \"./src/sidebar.js\");\n/* harmony import */ var _sidebarToggle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebarToggle */ \"./src/sidebarToggle.js\");\n\r\n\r\n\r\n\r\n\r\nfunction load()  {\r\n    \r\n    (0,_sidebarToggle__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n    ;(0,_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n    ;(0,_sidebar__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n\r\n}\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (load);\r\n\n\n//# sourceURL=webpack://anydo/./src/pageLoad.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _constractItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constractItem */ \"./src/constractItem.js\");\n/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ \"./src/modal.js\");\n/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar */ \"./src/sidebar.js\");\n/* harmony import */ var _sidebarToggle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sidebarToggle */ \"./src/sidebarToggle.js\");\n\r\n\r\n\r\n\r\n\r\nfunction load() {\r\n  (0,_sidebarToggle__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n  (0,_modal__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  (0,_sidebar__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n  (0,_constractItem__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (load);\r\n\n\n//# sourceURL=webpack://anydo/./src/pageLoad.js?");
 
 /***/ }),
 
@@ -146,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst createContentforSidebar = () => { \r\n\r\n    const mainContentH2 = document.querySelector('#mainContentH2')\r\n    let item = document.querySelectorAll('.sidebarItem')\r\n\r\n    item.forEach(item2 => { \r\n        item2.addEventListener('click', () => { \r\n            mainContentH2.innerHTML = item2.textContent + ':'\r\n            console.log(mainContentH2.innerHTML);\r\n        })\r\n    })\r\n\r\n    \r\n\r\n\r\n    \r\n\r\n}\r\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createContentforSidebar);\n\n//# sourceURL=webpack://anydo/./src/sidebar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst createContentforSidebar = () => {\r\n  const mainContentH2 = document.querySelector('#mainContentH2');\r\n  let item = document.querySelectorAll('.sidebarItem');\r\n\r\n  item.forEach((item2) => {\r\n    item2.addEventListener('click', () => {\r\n      mainContentH2.innerHTML = item2.textContent + ':';\r\n      console.log(mainContentH2.innerHTML);\r\n    });\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createContentforSidebar);\r\n\n\n//# sourceURL=webpack://anydo/./src/sidebar.js?");
 
 /***/ }),
 
@@ -156,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\n    const sidebarToggle = function () { \r\n        const btn = document.querySelector('#btn')\r\n        const sideBar = document.querySelector('.sidebar')\r\n        let item = document.querySelectorAll('.sidebarItem')\r\n        const sidebarIcon = document.querySelector('#sidebarIconContainer')\r\n        const closeBtn = document.querySelector('#closeBtn')\r\n        const mainContentArea = document.querySelector('#mainContent')\r\n    \r\n        btn.addEventListener('click', () => { \r\n            sideBar.classList.toggle('active')\r\n            item.forEach(item2 => { \r\n                item2.classList.toggle('active')\r\n            })\r\n            sidebarIcon.classList.toggle('active')\r\n            closeBtn.classList.toggle('active')\r\n            mainContentArea.classList.toggle('active')\r\n        })\r\n    }\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sidebarToggle);\r\n\r\n\r\n\n\n//# sourceURL=webpack://anydo/./src/sidebarToggle.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst sidebarToggle = function () {\r\n  const btn = document.querySelector('#btn');\r\n  const sideBar = document.querySelector('.sidebar');\r\n  let item = document.querySelectorAll('.sidebarItem');\r\n  const sidebarIcon = document.querySelector('#sidebarIconContainer');\r\n  const closeBtn = document.querySelector('#closeBtn');\r\n  const mainContentArea = document.querySelector('#mainContent');\r\n\r\n  btn.addEventListener('click', () => {\r\n    sideBar.classList.toggle('active');\r\n    item.forEach((item2) => {\r\n      item2.classList.toggle('active');\r\n    });\r\n    sidebarIcon.classList.toggle('active');\r\n    closeBtn.classList.toggle('active');\r\n    mainContentArea.classList.toggle('active');\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sidebarToggle);\r\n\n\n//# sourceURL=webpack://anydo/./src/sidebarToggle.js?");
 
 /***/ })
 
