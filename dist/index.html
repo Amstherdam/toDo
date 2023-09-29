@@ -32,33 +32,57 @@
           <i id="btn" class="fa-solid fa-bars"></i>
         </div>
 
-        <ul id="sidebarIconContainer">
-          <i>
+        <ul id="sidebarIconContainer"><!--  -->
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-inbox"></i>
               <span id="sidebarInbox">Inbox</span>
             </a>
-          </i>
-          <i>
+          </li>
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-check"></i>
               <span id="sidebarToday">Today</span>
             </a>
-          </i>
-          <i>
-            <a class="sidebarItem" href="#">
-              <i class="fa-solid fa-bars-progress"></i>
-              <span id="sidebarProjects">Projects</span>
-            </a>
-          </i>
-          <i>
+          </li>
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-star"></i>
               <span>Important List</span>
             </a>
-          </i>
+          </li>
+
+          <li>
+            <a class="sidebarItem" href="#">
+              <i class="fa-solid fa-bars-progress"></i>
+              <span id="sidebarProjects">Projects</span>
+              
+              
+            </a>
+          </li>
+
+
+         
+            <i  id="addNewProjectBtn" class="fa-solid fa-plus action2"></i> <!--  -->
+          
+  
+          
         </ul>
+        <div id="projectsContainer">
+
+          <!-- deneme eklemesi -->
+          <li class="projectsTitle">denem 1.0</li>
+          <li class="projectsTitle">denem 2.0</li>
+          <li class="projectsTitle">denem 3.0</li>
+          <!--  -->
+
+        </div>
       </div>
+
+
+      
+
+      <!-- main content -->
 
       <div id="mainContent">
         <div id="mainContentHeader">
@@ -72,7 +96,7 @@
 
     <!-- Modal html -->
 
-    <div id="modalDataInput" class="denem">
+    <div id="modalDataInput" class="beCloseModal">
       <div id="modalBG">
         <div id="modalHeader">
           <h3>New Task</h3>
@@ -117,9 +141,11 @@
               </div>
               <div class="formItems">
                 <label for="modalNewProject">Project :</label>
-                <select class="customSelect" name="" id="modalNewProject">
-                  <!-- add for js item -->
-                </select>
+                <select
+                  class="customSelect"
+                  name=""
+                  id="modalNewProject"
+                ></select>
                 <div>
                   <button class="modalBtn" id="modalAdddBtn">Add</button>
                   <button class="modalBtn" id="modalCloseBtn">Close</button>
@@ -127,6 +153,32 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- New project toggle -->
+
+    <div id="newProjectModal" class="beCloseModal">
+      <!-- beCloseModal -->
+      <div id="newProjectModalContainer">
+        <h4>Add New Project</h4>
+        <hr />
+
+        <div id="newProjectModalDiv">
+          <label for="modalNewTitle"> Project Name </label>
+          <input
+            type="text"
+            id="getProjectName"
+            minlength="4"
+            maxlength="30"
+            required
+          />
+        </div>
+
+        <div id="newProjectBtn">
+          <button class="modalBtn" id="newProjectCloseBtn">Close</button>
+          <button class="modalBtn" id="newProjectAddBtn">Add Project</button>
         </div>
       </div>
     </div>

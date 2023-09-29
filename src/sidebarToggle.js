@@ -5,6 +5,8 @@ const sidebarToggle = function () {
   const sidebarIcon = document.querySelector('#sidebarIconContainer');
   const closeBtn = document.querySelector('#closeBtn');
   const mainContentArea = document.querySelector('#mainContent');
+  const addNewProjectBtn =document.querySelector('#addNewProjectBtn')
+  const projectsTitle = document.querySelectorAll('.projectsTitle')
 
   btn.addEventListener('click', () => {
     sideBar.classList.toggle('active');
@@ -14,6 +16,11 @@ const sidebarToggle = function () {
     sidebarIcon.classList.toggle('active');
     closeBtn.classList.toggle('active');
     mainContentArea.classList.toggle('active');
+    addNewProjectBtn.classList.toggle('active')
+    projectsTitle.forEach((projectsTitleItem) => {
+      projectsTitleItem.classList.toggle('active')
+    })
+
   });
 };
 
