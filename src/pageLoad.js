@@ -6,8 +6,9 @@ import sidebarToggle from './sidebarToggle';
 function load() {
   sidebarToggle();
   modalToggle();
-  createContentforSidebar();
   taskComponent();
+  createContentforSidebar();
+  
 }
 
 export default load;

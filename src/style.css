@@ -240,7 +240,8 @@ nav {
   position: relative;
 }
 
-#addNewProjectBtn { /*  */
+#addNewProjectBtn {
+  /*  */
   margin-left: 0.8vw;
   cursor: pointer;
   position: absolute;
@@ -250,20 +251,20 @@ nav {
   transition: ease-in-out all 0.5s;
 }
 
-#addNewProjectBtn.active { 
+#addNewProjectBtn.active {
   left: -15vw;
   text-decoration: none;
 }
 
-#projectsContainer{ 
+#projectsContainer {
   margin: 2vh 0 0 3.5vw;
 }
 
-#projectsContainer { 
+#projectsContainer {
   position: absolute;
 }
 
-.projectsTitle { 
+.projectsTitle {
   position: relative;
   top: 28vh;
   left: 1vw;
@@ -272,15 +273,13 @@ nav {
   cursor: pointer;
 }
 
-.projectsTitle.active  { 
+.projectsTitle.active {
   left: -15vw;
   transition: ease-in-out all 0.5s;
   text-decoration: none;
 }
 
-
 /*! main  content*/
-
 
 #mainContent {
   margin: 8vh 19vw;
@@ -312,8 +311,6 @@ nav {
   font-size: 6vh;
   margin-top: 6vh;
 }
-
-
 
 /* ! Modal CSS */
 
@@ -509,7 +506,3 @@ textarea {
   background-color: rgb(200, 31, 31);
   color: whitesmoke;
 }
-
-
-
-
