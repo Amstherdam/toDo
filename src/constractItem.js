@@ -1,19 +1,18 @@
-import createContentforSidebar from './sidebar';
+import createContentforSidebar from "./sidebar";
 
 const modalAdddBtn = document.querySelector("#modalAdddBtn");
 
 let todoArr = []; //! it is the main array. The array have inside todo objects
 
+// ? the component main function
+
 const taskComponent = function () {
   modalAdddBtn.addEventListener("click", createNewTask);
-  newProjectComponent();
+  createProjectInside();
+  removeProject();
 };
 
-
-
-
 const createNewTask = function (event) {
-  
   event.preventDefault();
 
   const title = document.querySelector("#modalNewTitle");
@@ -36,65 +35,47 @@ const createNewTask = function (event) {
 
 let projectNameArr = [];
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//! remove Project
 
-const newProjectComponent = () => {
-  /* add project  */
-  createProjectInside()  
+const deleteProjectBtnDlt = document.querySelector("#deleteProjectBtnDlt");
+const mainContentH2 = document.querySelector("#mainContentH2");
+let projectsContainer = document.querySelector("#projectsContainer");
 
-  removeProject()
-  
+const removeProject = function () {
+  deleteProjectBtnDlt.addEventListener("click", () => {
+    let bre = mainContentH2.innerHTML.slice(0, -1);
+    let indexSpesificItem = projectNameArr.indexOf(bre);
+
+    if (indexSpesificItem > -1) {
+      projectNameArr.splice(indexSpesificItem, 1); // remove item in array
+    }
+
+    while (projectsContainer.firstChild) {
+      projectsContainer.removeChild(projectsContainer.lastChild); // remove project section all items with this loop
+    }
+
+    const btn = document.querySelector("#btn");
+
+    projectNameArr.forEach((projectNameArrItem) => {
+      const newProject = document.createElement("li");
+      newProject.classList.add("projectsTitle");
+      newProject.innerHTML = projectNameArrItem;
+      projectsContainer.appendChild(newProject);
+
+      btn.addEventListener("click", () => {
+        newProject.classList.toggle("active");
+      });
+    });
+
+    createContentforSidebar();
+
+    mainContentH2.innerHTML = projectNameArr[0] + ":";
+  });
 };
 
-//! remove Project  
+//  ! create project items
 
-const deleteProjectBtnDlt = document.querySelector('#deleteProjectBtnDlt')
-const mainContentH2 = document.querySelector('#mainContentH2')
-let projectsContainer = document.querySelector('#projectsContainer')
-
-const removeProject = function () { 
-  deleteProjectBtnDlt.addEventListener('click', () => { 
-      let bre = (mainContentH2.innerHTML).slice(0, -1)
-      let indexSpesificItem = projectNameArr.indexOf(bre)
-
-      if ( indexSpesificItem > -1 ) { 
-        projectNameArr.splice(indexSpesificItem, 1)  // remove item in array 
-      }
-
-      while(projectsContainer.firstChild) { 
-        projectsContainer.removeChild(projectsContainer.lastChild)  // remove project section all items with this loop
-      }
-      
-      const btn = document.querySelector("#btn");
-      
-
-      projectNameArr.forEach(projectNameArrItem => { 
-        const newProject = document.createElement("li");
-        newProject.classList.add("projectsTitle");
-        newProject.innerHTML = projectNameArrItem;
-        projectsContainer.appendChild(newProject);
-
-        btn.addEventListener("click", () => {
-          newProject.classList.toggle("active");
-        });
-
-      })
-
-      
-     
-
-       console.log(projectNameArr) 
-       console.log(bre)
-  })
-
-}
-
-//  ! create project items 
-
-
-
-
-const createProjectInside = function () { 
+const createProjectInside = function () {
   const addProjectBtn = document.querySelector("#newProjectAddBtn");
   const projectsContainer = document.querySelector("#projectsContainer");
   const newTitle = document.querySelector("#getProjectName");
@@ -104,7 +85,8 @@ const createProjectInside = function () {
   addProjectBtn.addEventListener("click", () => {
     const newProject = document.createElement("li");
 
-    let newTitleList = newTitle.value.charAt(0).toUpperCase() + newTitle.value.slice(1);
+    let newTitleList =
+      newTitle.value.charAt(0).toUpperCase() + newTitle.value.slice(1);
 
     projectNameArr.push(newTitleList);
 
@@ -122,11 +104,8 @@ const createProjectInside = function () {
       modalNewProject.appendChild(newProjectInForm);
     });
 
-    createContentforSidebar()
+    createContentforSidebar();
   });
-}
-
-
-
+};
 
 export default taskComponent;
