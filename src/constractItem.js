@@ -1,14 +1,19 @@
+import createContentforSidebar from './sidebar';
+
 const modalAdddBtn = document.querySelector("#modalAdddBtn");
 
-let todoArr = [];
+let todoArr = []; //! it is the main array. The array have inside todo objects
 
 const taskComponent = function () {
   modalAdddBtn.addEventListener("click", createNewTask);
   newProjectComponent();
 };
 
+
+
+
 const createNewTask = function (event) {
-  /* add todo */
+  
   event.preventDefault();
 
   const title = document.querySelector("#modalNewTitle");
@@ -31,8 +36,65 @@ const createNewTask = function (event) {
 
 let projectNameArr = [];
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 const newProjectComponent = () => {
   /* add project  */
+  createProjectInside()  
+
+  removeProject()
+  
+};
+
+//! remove Project  
+
+const deleteProjectBtnDlt = document.querySelector('#deleteProjectBtnDlt')
+const mainContentH2 = document.querySelector('#mainContentH2')
+let projectsContainer = document.querySelector('#projectsContainer')
+
+const removeProject = function () { 
+  deleteProjectBtnDlt.addEventListener('click', () => { 
+      let bre = (mainContentH2.innerHTML).slice(0, -1)
+      let indexSpesificItem = projectNameArr.indexOf(bre)
+
+      if ( indexSpesificItem > -1 ) { 
+        projectNameArr.splice(indexSpesificItem, 1)  // remove item in array 
+      }
+
+      while(projectsContainer.firstChild) { 
+        projectsContainer.removeChild(projectsContainer.lastChild)  // remove project section all items with this loop
+      }
+      
+      const btn = document.querySelector("#btn");
+      
+
+      projectNameArr.forEach(projectNameArrItem => { 
+        const newProject = document.createElement("li");
+        newProject.classList.add("projectsTitle");
+        newProject.innerHTML = projectNameArrItem;
+        projectsContainer.appendChild(newProject);
+
+        btn.addEventListener("click", () => {
+          newProject.classList.toggle("active");
+        });
+
+      })
+
+      
+     
+
+       console.log(projectNameArr) 
+       console.log(bre)
+  })
+
+}
+
+//  ! create project items 
+
+
+
+
+const createProjectInside = function () { 
   const addProjectBtn = document.querySelector("#newProjectAddBtn");
   const projectsContainer = document.querySelector("#projectsContainer");
   const newTitle = document.querySelector("#getProjectName");
@@ -60,8 +122,11 @@ const newProjectComponent = () => {
       modalNewProject.appendChild(newProjectInForm);
     });
 
-    console.log(projectNameArr);
+    createContentforSidebar()
   });
-};
+}
+
+
+
 
 export default taskComponent;

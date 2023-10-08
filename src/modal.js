@@ -1,3 +1,5 @@
+//! Modals Open and Close
+
 const modalContainer = document.querySelector("#modalDataInput");
 const addNewFormBtn = document.querySelector("#addNewFormBtn");
 const modalCloseBtn = document.querySelector("#modalClose");
@@ -5,6 +7,8 @@ const addProjectBtn = document.querySelector("#addNewProjectBtn");
 const newProjectModal = document.querySelector("#newProjectModal");
 const newProjectCloseBtn = document.querySelector("#newProjectCloseBtn");
 const modalCloseBtn2 = document.querySelector("#modalCloseBtn");
+
+
 
 
 const modalToggle = function () {
@@ -27,6 +31,10 @@ const modalToggle = function () {
   newProjectCloseBtn.addEventListener("click", () => {
     newProjectModal.classList.remove("modalDataInputOpen");
   });
+
+  
+
+  
 };
 
 export default modalToggle;

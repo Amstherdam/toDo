@@ -1,3 +1,5 @@
+//! Toggle active 
+
 const sidebarToggle = function () {
   const btn = document.querySelector('#btn');
   const sideBar = document.querySelector('.sidebar');
