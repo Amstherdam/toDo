@@ -4,7 +4,6 @@ const createContentforSidebar = () => {
   let itemProject = document.querySelectorAll(".projectsTitle");
   const mainContentHeader = document.querySelector("#mainContentHeader");
 
-
   item.forEach((itemInside) => {
     itemInside.addEventListener("click", () => {
       mainContentH2.innerHTML = itemInside.textContent + ":";
@@ -13,8 +12,7 @@ const createContentforSidebar = () => {
     });
   });
 
-
-    //! leftsidebar  projects' child 
+  //! leftsidebar  projects' child
 
   itemProject.forEach((e) => {
     e.addEventListener("click", () => {
@@ -38,33 +36,29 @@ const createContentforSidebar = () => {
     });
   });
 
-
-  //! Projects child inside delete action 
+  //! Projects child inside delete action
 
   const deleteProjectFontion = function () {
     const deleteButton = document.querySelectorAll(".deleteButton");
-    const deleteProjectModal = document.querySelector('#deleteProjectModal')
-    const deleteProjectBtnClose = document.querySelector('#deleteProjectBtnClose')
-    const modalClose2 = document.querySelector('#modalClose2')
-    
-    
+    const deleteProjectModal = document.querySelector("#deleteProjectModal");
+    const deleteProjectBtnClose = document.querySelector(
+      "#deleteProjectBtnClose"
+    );
+    const modalClose2 = document.querySelector("#modalClose2");
 
-      deleteButton.forEach((item) =>  { 
-        item.addEventListener('click', () => { 
-          deleteProjectModal.classList.add('modalDataInputOpen')
-        })
-      })     
-      
-      deleteProjectBtnClose.addEventListener('click', () => {
-        deleteProjectModal.classList.remove("modalDataInputOpen");
-      })
+    deleteButton.forEach((item) => {
+      item.addEventListener("click", () => {
+        deleteProjectModal.classList.add("modalDataInputOpen");
+      });
+    });
 
-      modalClose2.addEventListener('click', () => { 
-        deleteProjectModal.classList.remove("modalDataInputOpen");
-      })
+    deleteProjectBtnClose.addEventListener("click", () => {
+      deleteProjectModal.classList.remove("modalDataInputOpen");
+    });
 
-      
-      
+    modalClose2.addEventListener("click", () => {
+      deleteProjectModal.classList.remove("modalDataInputOpen");
+    });
   };
 };
 

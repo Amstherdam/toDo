@@ -40,6 +40,7 @@ let projectNameArr = [];
 const deleteProjectBtnDlt = document.querySelector("#deleteProjectBtnDlt");
 const mainContentH2 = document.querySelector("#mainContentH2");
 let projectsContainer = document.querySelector("#projectsContainer");
+const sidebarInbox = document.querySelector("#sidebarInbox");
 
 const removeProject = function () {
   deleteProjectBtnDlt.addEventListener("click", () => {
@@ -69,7 +70,15 @@ const removeProject = function () {
 
     createContentforSidebar();
 
-    mainContentH2.innerHTML = projectNameArr[0] + ":";
+    if (projectNameArr[0] == undefined) {
+      mainContentH2.innerHTML = sidebarInbox.innerHTML + ":";
+    } else {
+      mainContentH2.innerHTML = projectNameArr[0] + ":";
+    }
+
+    console.log(sidebarInbox.innerHTML)
+    console.log(projectNameArr[0] == undefined)
+    console.log(mainContentH2.innerHTML)
   });
 };
 
@@ -98,13 +107,15 @@ const createProjectInside = function () {
       btn.addEventListener("click", () => {
         newProject.classList.toggle("active");
       });
-
-      const newProjectInForm = document.createElement("option");
-      newProjectInForm.innerHTML = newTitleList;
-      modalNewProject.appendChild(newProjectInForm);
     });
 
+    const newProjectInForm = document.createElement("option");
+    newProjectInForm.innerHTML = newTitleList;
+    modalNewProject.appendChild(newProjectInForm);
+
     createContentforSidebar();
+
+    /* buraya baglancak */
   });
 };
 
