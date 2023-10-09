@@ -44,6 +44,8 @@ const createContentforSidebar = () => {
     const deleteProjectBtnClose = document.querySelector(
       "#deleteProjectBtnClose"
     );
+    const deleteProjectBtnDlt = document.querySelector('#deleteProjectBtnDlt')
+
     const modalClose2 = document.querySelector("#modalClose2");
 
     deleteButton.forEach((item) => {
@@ -53,6 +55,10 @@ const createContentforSidebar = () => {
     });
 
     deleteProjectBtnClose.addEventListener("click", () => {
+      deleteProjectModal.classList.remove("modalDataInputOpen");
+    });
+
+    deleteProjectBtnDlt.addEventListener("click", () => {
       deleteProjectModal.classList.remove("modalDataInputOpen");
     });
 
