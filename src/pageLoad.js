@@ -3,11 +3,15 @@ import modalToggle from './modal';
 import createContentforSidebar from './sidebar';
 import sidebarToggle from './sidebarToggle';
 
+
+//! load page function
+
 function load() {
   sidebarToggle();
   modalToggle();
-  createContentforSidebar();
   taskComponent();
+  createContentforSidebar();
+
 }
 
 export default load;

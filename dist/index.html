@@ -32,33 +32,51 @@
           <i id="btn" class="fa-solid fa-bars"></i>
         </div>
 
-        <ul id="sidebarIconContainer">
-          <i>
+        <ul id="sidebarIconContainer"><!--  -->
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-inbox"></i>
               <span id="sidebarInbox">Inbox</span>
             </a>
-          </i>
-          <i>
+          </li>
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-check"></i>
               <span id="sidebarToday">Today</span>
             </a>
-          </i>
-          <i>
-            <a class="sidebarItem" href="#">
-              <i class="fa-solid fa-bars-progress"></i>
-              <span id="sidebarProjects">Projects</span>
-            </a>
-          </i>
-          <i>
+          </li>
+          <li>
             <a class="sidebarItem" href="#">
               <i class="fa-solid fa-star"></i>
               <span>Important List</span>
             </a>
-          </i>
+          </li>
+
+          <li>
+            <a class="sidebarItem" href="#">
+              <i class="fa-solid fa-bars-progress"></i>
+              <span id="sidebarProjects">Projects</span>
+              
+              
+            </a>
+          </li>
+
+
+         
+            <i  id="addNewProjectBtn" class="fa-solid fa-plus action2"></i> <!--  -->
+          
+          
         </ul>
+        <div id="projectsContainer">
+
+          <!-- deneme eklemesi -->
+          <li class="projectsTitle">denem 1.0</li>
+          <!--  -->
+
+        </div>
       </div>
+
+      <!-- main content -->
 
       <div id="mainContent">
         <div id="mainContentHeader">
@@ -72,7 +90,7 @@
 
     <!-- Modal html -->
 
-    <div id="modalDataInput" class="denem">
+    <div id="modalDataInput" class="beCloseModal">
       <div id="modalBG">
         <div id="modalHeader">
           <h3>New Task</h3>
@@ -117,9 +135,13 @@
               </div>
               <div class="formItems">
                 <label for="modalNewProject">Project :</label>
-                <select class="customSelect" name="" id="modalNewProject">
-                  <!-- add for js item -->
-                </select>
+                <select
+                  class="customSelect"
+                  name=""
+                  id="modalNewProject"
+                >
+              <option value="Inbox">Inbox</option>
+              </select>
                 <div>
                   <button class="modalBtn" id="modalAdddBtn">Add</button>
                   <button class="modalBtn" id="modalCloseBtn">Close</button>
@@ -128,6 +150,50 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+
+    <!-- New project modal -->
+
+    <div id="newProjectModal" class="beCloseModal">
+      <!-- beCloseModal -->
+      <div id="newProjectModalContainer">
+        <h4>Add New Project</h4>
+        <hr />
+
+        <div id="newProjectModalDiv">
+          <label for="modalNewTitle"> Project Name </label>
+          <input
+            type="text"
+            id="getProjectName"
+            minlength="4"
+            maxlength="30"
+            required
+          />
+        </div>
+
+        <div id="newProjectBtn">
+          <button class="modalBtn" id="newProjectCloseBtn">Close</button>
+          <button class="modalBtn" id="newProjectAddBtn">Add Project</button>
+        </div>
+      </div>
+    </div>
+
+
+       <!-- delete modal  -->
+
+    <div id="deleteProjectModal" class="beCloseModal">
+      <div id="deleteProject"> 
+
+        <div id="deleteProjectHeader">
+          <p>Are you sure you want to delete this project?</p>
+        </div>
+
+        <div id="deleteProjectBtn"> 
+            <button id="deleteProjectBtnDlt" class="modalBtn2">Yes, i am sure</button>
+            <button id="deleteProjectBtnClose" class="modalBtn2">No, not yet</button>
+        </div>
+        <i id="modalClose2" class="fa-regular fa-x"></i>
       </div>
     </div>
 
