@@ -1,6 +1,7 @@
 import createContentforSidebar from "./sidebar";
 import { createNewTask } from "./projectDetails";
 
+
 export let todoArr = []; //! it is the main array. The array have inside todo objects
 
 // ? the component main function
@@ -40,7 +41,8 @@ const removeProject = function () {
       modalNewProject.removeChild(modalNewProject.lastChild);
     }
 
-    console.log(todoArr);
+    // console.log(bre);
+    // console.log(indexSpesificItem)
 
     const btn = document.querySelector("#btn");
 
@@ -68,7 +70,7 @@ const removeProject = function () {
     }
 
     /* console.log(sidebarInbox.innerHTML);
-    console.log(projectNameArr[0] == undefined);
+    console.log(projectNameArr[0] == undefined);projectsTitle
     console.log(mainContentH2.innerHTML); */
   });
 };
@@ -105,8 +107,9 @@ const createProjectInside = function () {
 
     createContentforSidebar();
 
-    /* buraya baglancak */
+    
   });
+
 };
 
 export default taskComponent;

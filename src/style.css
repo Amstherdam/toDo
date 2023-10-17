@@ -575,4 +575,8 @@ textarea {
   background-color: rgb(251, 71, 71);
 }
 
-
+.todoItem { 
+  background-color: blue;
+  width: 300px;
+  height: 300px;
+}

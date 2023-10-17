@@ -20,5 +20,5 @@ export const createNewTask = function (e) {
   };
 
   todoArr.push(object);
-  console.log(todoArr);
+  
 };
